@@ -209,6 +209,37 @@ class BeamPA:
     units: Attr[str] = "deg"
 
 
+@dataclass
+class D2MKIDID:
+    data: Data[Ch, int]
+    long_name: Attr[str] = "[DESHIMA 2.0] MKID ID"
+
+
+@dataclass
+class D2MKIDType:
+    data: Data[Ch, str]
+    long_name: Attr[str] = "[DESHIMA 2.0] MKID type"
+
+
+@dataclass
+class D2MKIDFreq:
+    data: Data[Ch, str]
+    long_name: Attr[str] = "[DESHIMA 2.0] MKID center response frequency"
+    units: Attr[str] = "Hz"
+
+
+@dataclass
+class D2RoomChopperState:
+    data: Data[Ch, str]
+    long_name: Attr[str] = "[DESHIMA 2.0] Room chopper state"
+
+
+@dataclass
+class D2SkyChopperIsopen:
+    data: Data[Ch, bool]
+    long_name: Attr[str] = "[DESHIMA 2.0] Whether sky chopper is open"
+
+
 @dataclass(frozen=True)
 class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
@@ -242,3 +273,8 @@ class MS(AsDataArray):
     beam_major: Coordof[BeamMajor] = 0.0
     beam_minor: Coordof[BeamMinor] = 0.0
     beam_pa: Coordof[BeamPA] = 0.0
+    d2_mkid_id: Coordof[D2MKIDID] = 0
+    d2_mkid_type: Coordof[D2MKIDType] = ""
+    d2_mkid_freq: Coordof[D2MKIDFreq] = 0.0
+    d2_roomchopper_state: Coordof[D2RoomChopperState] = ""
+    d2_skychopper_isopen: Coordof[D2SkyChopperIsopen] = False
