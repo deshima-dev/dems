@@ -98,27 +98,6 @@ class Frame:
 
 
 @dataclass
-class TelescopeX:
-    data: Data[Tuple[()], float]
-    long_name: Attr[str] = "ITRS X coordinate of telescope"
-    units: Attr[str] = "m"
-
-
-@dataclass
-class TelescopeY:
-    data: Data[Tuple[()], float]
-    long_name: Attr[str] = "ITRS Y coordinate of telescope"
-    units: Attr[str] = "m"
-
-
-@dataclass
-class TelescopeZ:
-    data: Data[Tuple[()], str]
-    long_name: Attr[str] = "ITRS Z coordinate of telescope"
-    units: Attr[str] = "m"
-
-
-@dataclass
 class GroundTemperature:
     data: Data[Ti, float]
     long_name: Attr[str] = "Ground temperature"
@@ -257,9 +236,6 @@ class MS(AsDataArray):
     lon_origin: Coordof[LonOrigin] = 0.0
     lat_origin: Coordof[LatOrigin] = 0.0
     frame: Coordof[Frame] = "altaz"
-    telescope_x: Coordof[TelescopeX] = 0.0
-    telescope_y: Coordof[TelescopeY] = 0.0
-    telescope_z: Coordof[TelescopeZ] = 0.0
     ground_temperature: Coordof[GroundTemperature] = 0.0
     cabin_temperature: Coordof[CabinTemperature] = 0.0
     pressure: Coordof[Pressure] = 0.0
@@ -273,6 +249,12 @@ class MS(AsDataArray):
     beam_major: Coordof[BeamMajor] = 0.0
     beam_minor: Coordof[BeamMinor] = 0.0
     beam_pa: Coordof[BeamPA] = 0.0
+    observation: Attr[str] = ""
+    observer: Attr[str] = ""
+    project: Attr[str] = ""
+    telescope: Attr[str] = ""
+    telescope_coords: Attr[Tuple[float, float, float]] = (0.0, 0.0, 0.0)
+    telescope_diameter: Attr[float] = 0.0
     d2_mkid_id: Coordof[D2MKIDID] = 0
     d2_mkid_type: Coordof[D2MKIDType] = ""
     d2_mkid_freq: Coordof[D2MKIDFreq] = 0.0
