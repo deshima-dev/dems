@@ -97,6 +97,27 @@ class Frame:
     long_name: Attr[str] = "Sky coordinate frame"
 
 
+@dataclass
+class TelescopeX:
+    data: Data[Tuple[()], float]
+    long_name: Attr[str] = "ITRS X coordinate of telescope"
+    units: Attr[str] = "m"
+
+
+@dataclass
+class TelescopeY:
+    data: Data[Tuple[()], float]
+    long_name: Attr[str] = "ITRS Y coordinate of telescope"
+    units: Attr[str] = "m"
+
+
+@dataclass
+class TelescopeZ:
+    data: Data[Tuple[()], str]
+    long_name: Attr[str] = "ITRS Z coordinate of telescope"
+    units: Attr[str] = "m"
+
+
 @dataclass(frozen=True)
 class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
@@ -114,3 +135,6 @@ class MS(AsDataArray):
     lon_origin: Coordof[LonOrigin] = 0.0
     lat_origin: Coordof[LatOrigin] = 0.0
     frame: Coordof[Frame] = "altaz"
+    telescope_x: Coordof[TelescopeX] = 0.0
+    telescope_y: Coordof[TelescopeY] = 0.0
+    telescope_z: Coordof[TelescopeZ] = 0.0
