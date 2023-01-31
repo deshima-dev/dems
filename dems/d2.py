@@ -45,6 +45,24 @@ class Time:
     long_name: Attr[str] = "Start time in UTC"
 
 
+@dataclass
+class Beam:
+    data: Data[Ti, str]
+    long_name: Attr[str] = "Beam ID"
+
+
+@dataclass
+class Scan:
+    data: Data[Ti, str]
+    long_name: Attr[str] = "Scan ID"
+
+
+@dataclass
+class State:
+    data: Data[Ti, str]
+    long_name: Attr[str] = "State ID"
+
+
 @dataclass(frozen=True)
 class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
@@ -54,3 +72,6 @@ class MS(AsDataArray):
     weight: Coordof[Weight] = 1.0
     time: Coordof[Time] = "2020-01-01"
     chan: Coordof[Chan] = 0
+    beam: Coordof[Beam] = ""
+    scan: Coordof[Scan] = ""
+    state: Coordof[State] = ""
