@@ -260,3 +260,6 @@ class MS(AsDataArray):
     d2_mkid_freq: Coordof[D2MKIDFreq] = 0.0
     d2_roomchopper_state: Coordof[D2RoomChopperState] = ""
     d2_skychopper_isopen: Coordof[D2SkyChopperIsopen] = False
+    d2_dmerge_version: Attr[str] = ""
+    d2_ddb_version: Attr[str] = ""
+    d2_dems_version: Attr[str] = ""
