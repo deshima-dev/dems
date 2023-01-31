@@ -160,6 +160,55 @@ class WindDirection:
     units: Attr[str] = "deg"
 
 
+@dataclass
+class Exposure:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Sample exposure time"
+    units: Attr[str] = "s"
+
+
+@dataclass
+class Interval:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Sample interval time"
+    units: Attr[str] = "s"
+
+
+@dataclass
+class Bandwidth:
+    data: Data[Ch, float]
+    long_name: Attr[str] = "Channel band width"
+    units: Attr[str] = "Hz"
+
+
+@dataclass
+class Frequency:
+    data: Data[Ch, float]
+    long_name: Attr[str] = "Channel center frequency"
+    units: Attr[str] = "Hz"
+
+
+@dataclass
+class BeamMajor:
+    data: Data[Ch, float]
+    long_name: Attr[str] = "Beam major axis"
+    units: Attr[str] = "deg"
+
+
+@dataclass
+class BeamMinor:
+    data: Data[Ch, float]
+    long_name: Attr[str] = "Beam minor axis"
+    units: Attr[str] = "deg"
+
+
+@dataclass
+class BeamPA:
+    data: Data[Ch, float]
+    long_name: Attr[str] = "Beam position angle"
+    units: Attr[str] = "deg"
+
+
 @dataclass(frozen=True)
 class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
@@ -186,3 +235,10 @@ class MS(AsDataArray):
     humidity: Coordof[Pressure] = 0.0
     wind_speed: Coordof[WindSpeed] = 0.0
     wind_direction: Coordof[WindDirection] = 0.0
+    exposure: Coordof[Exposure] = 0.0
+    interval: Coordof[Interval] = 0.0
+    bandwidth: Coordof[Bandwidth] = 0.0
+    frequency: Coordof[Frequency] = 0.0
+    beam_major: Coordof[BeamMajor] = 0.0
+    beam_minor: Coordof[BeamMinor] = 0.0
+    beam_pa: Coordof[BeamPA] = 0.0
