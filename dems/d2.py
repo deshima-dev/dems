@@ -118,6 +118,48 @@ class TelescopeZ:
     units: Attr[str] = "m"
 
 
+@dataclass
+class GroundTemperature:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Ground temperature"
+    units: Attr[str] = "K"
+
+
+@dataclass
+class CabinTemperature:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Cabin temperature"
+    units: Attr[str] = "K"
+
+
+@dataclass
+class Pressure:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Atmospheric pressure"
+    units: Attr[str] = "Pa"
+
+
+@dataclass
+class Humidity:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Relative humidity"
+    units: Attr[str] = "%"
+
+
+@dataclass
+class WindSpeed:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Wind speed"
+    units: Attr[str] = "m/s"
+
+
+@dataclass
+class WindDirection:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Wind direction"
+    units: Attr[str] = "deg"
+
+
 @dataclass(frozen=True)
 class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
@@ -138,3 +180,9 @@ class MS(AsDataArray):
     telescope_x: Coordof[TelescopeX] = 0.0
     telescope_y: Coordof[TelescopeY] = 0.0
     telescope_z: Coordof[TelescopeZ] = 0.0
+    ground_temperature: Coordof[GroundTemperature] = 0.0
+    cabin_temperature: Coordof[CabinTemperature] = 0.0
+    pressure: Coordof[Pressure] = 0.0
+    humidity: Coordof[Pressure] = 0.0
+    wind_speed: Coordof[WindSpeed] = 0.0
+    wind_direction: Coordof[WindDirection] = 0.0
