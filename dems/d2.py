@@ -231,19 +231,19 @@ class AsteMistiPwv:
 
 
 @dataclass
-class D2MKIDID:
+class D2MkidID:
     data: Data[Ch, int]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID ID"
 
 
 @dataclass
-class D2MKIDType:
+class D2MkidType:
     data: Data[Ch, str]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID type"
 
 
 @dataclass
-class D2MKIDFreq:
+class D2MkidFreq:
     data: Data[Ch, str]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID center response frequency"
     units: Attr[str] = "Hz"
@@ -303,9 +303,9 @@ class MS(AsDataArray):
     aste_misti_az: Coordof[AsteMistiAz] = 0.0
     aste_misti_el: Coordof[AsteMistiEl] = 0.0
     aste_misti_pwv: Coordof[AsteMistiPwv] = 0.0
-    d2_mkid_id: Coordof[D2MKIDID] = 0
-    d2_mkid_type: Coordof[D2MKIDType] = ""
-    d2_mkid_freq: Coordof[D2MKIDFreq] = 0.0
+    d2_mkid_id: Coordof[D2MkidID] = 0
+    d2_mkid_type: Coordof[D2MkidType] = ""
+    d2_mkid_freq: Coordof[D2MkidFreq] = 0.0
     d2_roomchopper_state: Coordof[D2RoomChopperState] = ""
     d2_skychopper_isopen: Coordof[D2SkyChopperIsopen] = False
     d2_dmerge_version: Attr[str] = ""
