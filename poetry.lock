@@ -253,18 +253,6 @@ files = [
 traitlets = "*"
 
 [[package]]
-name = "morecopy"
-version = "0.2.4"
-description = "Copy even immutable objects as much as possible"
-category = "main"
-optional = false
-python-versions = ">=3.7,<3.11"
-files = [
-    {file = "morecopy-0.2.4-py3-none-any.whl", hash = "sha256:ea6c5f998fca2127928fc1b90eccaef9850cf2ff8b975cdce978d3fb09881009"},
-    {file = "morecopy-0.2.4.tar.gz", hash = "sha256:29420a75c66371c9edf05fca7fbf61096557846ebfd1e8881e0d342ac4ea9c7a"},
-]
-
-[[package]]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
@@ -649,6 +637,7 @@ category = "dev"
 optional = false
 python-versions = "*"
 files = [
+    {file = "wcwidth-0.2.6-py2.py3-none-any.whl", hash = "sha256:795b138f6875577cd91bba52baf9e445cd5118fd32723b460e30a0af30ea230e"},
     {file = "wcwidth-0.2.6.tar.gz", hash = "sha256:a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"},
 ]
 
@@ -679,18 +668,17 @@ viz = ["matplotlib", "nc-time-axis", "seaborn"]
 
 [[package]]
 name = "xarray-dataclasses"
-version = "1.3.2"
+version = "1.4.0"
 description = "xarray data creation made easy by dataclass"
 category = "main"
 optional = false
 python-versions = ">=3.7.1,<3.11"
 files = [
-    {file = "xarray_dataclasses-1.3.2-py3-none-any.whl", hash = "sha256:d3448cc74cd36db7125d8f9f80075489abc2851d3863bf4505a592c217173914"},
-    {file = "xarray_dataclasses-1.3.2.tar.gz", hash = "sha256:6e3be7a1836bf0c94c32cdb766170997319b1a9fe6e0f46469d54c043ade15b8"},
+    {file = "xarray_dataclasses-1.4.0-py3-none-any.whl", hash = "sha256:5e0d29b8109e1d1270a2a4bb35629e0cff5eff850146016dff079e3e8ad71ccf"},
+    {file = "xarray_dataclasses-1.4.0.tar.gz", hash = "sha256:a62754bea8a60cbfd3114ef0cbd87b1f5b39fdd01f24a3e52f7a1199f206f4c3"},
 ]
 
 [package.dependencies]
-morecopy = ">=0.2,<0.3"
 numpy = {version = ">=1.15,<2.0", markers = "python_version >= \"3.8\" and python_version < \"3.11\""}
 typing-extensions = ">=3.10,<5.0"
 xarray = {version = ">=0.18,<2023", markers = "python_version >= \"3.8\" and python_version < \"3.11\""}
@@ -698,4 +686,4 @@ xarray = {version = ">=0.18,<2023", markers = "python_version >= \"3.8\" and pyt
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8, <3.11"
-content-hash = "1cfe8ec84fd8ed9f921a5fc54b224b0ba87b2811881de7c9bc1d6564397df3dd"
+content-hash = "826eec2d4d00657a9280f268cbf6fb71293ad1dfe59db323ecdf7ca702b5364a"
