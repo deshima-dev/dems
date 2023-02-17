@@ -189,6 +189,48 @@ class BeamPA:
 
 
 @dataclass
+class AsteSubrefX:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subref X position."
+    units: Attr[str] = "mm"
+
+
+@dataclass
+class AsteSubrefY:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subref Y position."
+    units: Attr[str] = "mm"
+
+
+@dataclass
+class AsteSubrefZ:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subref Z position."
+    units: Attr[str] = "mm"
+
+
+@dataclass
+class AsteMistiAz:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] MiSTI azimuth."
+    units: Attr[str] = "deg"
+
+
+@dataclass
+class AsteMistiEl:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] MiSTI elevation."
+    units: Attr[str] = "deg"
+
+
+@dataclass
+class AsteMistiPwv:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] MiSTI PWV."
+    units: Attr[str] = "mm"
+
+
+@dataclass
 class D2MKIDID:
     data: Data[Ch, int]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID ID"
@@ -255,6 +297,12 @@ class MS(AsDataArray):
     telescope: Attr[str] = ""
     telescope_coords: Attr[Tuple[float, float, float]] = (0.0, 0.0, 0.0)
     telescope_diameter: Attr[float] = 0.0
+    aste_subref_x: Coordof[AsteSubrefX] = 0.0
+    aste_subref_y: Coordof[AsteSubrefY] = 0.0
+    aste_subref_x: Coordof[AsteSubrefZ] = 0.0
+    aste_misti_az: Coordof[AsteMistiAz] = 0.0
+    aste_misti_el: Coordof[AsteMistiEl] = 0.0
+    aste_misti_pwv: Coordof[AsteMistiPwv] = 0.0
     d2_mkid_id: Coordof[D2MKIDID] = 0
     d2_mkid_type: Coordof[D2MKIDType] = ""
     d2_mkid_freq: Coordof[D2MKIDFreq] = 0.0
