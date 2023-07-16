@@ -7,14 +7,14 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.8, <3.11"
-typing-extensions = "^4.0"
-xarray-dataclasses = "^1.5"
+python = ">=3.8, <3.12"
+xarray-dataclasses = "^1.6"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.3"
+black = "^23.7"
 ipython = "^8.12"
-pytest = "^7.3"
+pyright = "^1.1"
+pytest = "^7.4"
 
 [tool.pyright]
 typeCheckingMode = "basic"
