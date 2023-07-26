@@ -24,7 +24,7 @@ class MS(AsDataArray):
     vrad: Coord[Time, float] = 0.0
     x: Coord[Time, float] = 0.0
     y: Coord[Time, float] = 0.0
-    Timeme: Coord[Time, float] = 0.0
+    time: Coord[Time, float] = 0.0
     temp: Coord[Time, float] = 0.0
     pressure: Coord[Time, float] = 0.0
     vapor_pressure: Coord[Time, float] = 0.0
