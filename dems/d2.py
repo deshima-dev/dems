@@ -8,6 +8,7 @@ from typing import Any, Literal, Tuple
 
 # dependencies
 from xarray_dataclasses import AsDataArray, Attr, Coordof, Data, Dataof
+from . import __version__
 
 
 # type hints
@@ -21,7 +22,7 @@ ASTE_ITRS_COORDS = (
     -5440188.022176585,
     -2475718.801708271,
 )
-DEMS_VERSION = "0.3.0"
+DEMS_VERSION = __version__
 DMERGE_VERSION = "1.0.0"
 
 
