@@ -89,14 +89,14 @@ class Lat:
 
 @dataclass
 class LonOrigin:
-    data: Data[Tuple[()], float]
+    data: Data[Ti, float]
     long_name: Attr[str] = "Reference sky longitude"
     units: Attr[str] = "deg"
 
 
 @dataclass
 class LatOrigin:
-    data: Data[Tuple[()], float]
+    data: Data[Ti, float]
     long_name: Attr[str] = "Reference sky latitude"
     units: Attr[str] = "deg"
 
