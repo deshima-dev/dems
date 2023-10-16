@@ -7,11 +7,11 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.8, <3.12"
-xarray-dataclasses = "^1.6"
+python = ">=3.8, <3.13"
+xarray-dataclasses = "^1.7"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.7"
+black = "^23.9"
 ipython = "^8.12"
 pyright = "^1.1"
 pytest = "^7.4"
