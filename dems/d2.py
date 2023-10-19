@@ -23,7 +23,7 @@ ASTE_ITRS_COORDS = (
     -2475718.801708271,
 )
 DEMS_VERSION = __version__
-DEMERGE_VERSION = "1.0.0"
+DEMERGE_VERSION = "2.0.0"
 
 
 @dataclass
