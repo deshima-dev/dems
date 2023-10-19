@@ -23,7 +23,7 @@ ASTE_ITRS_COORDS = (
     -2475718.801708271,
 )
 DEMS_VERSION = __version__
-DMERGE_VERSION = "1.0.0"
+DEMERGE_VERSION = "1.0.0"
 
 
 @dataclass
@@ -313,4 +313,4 @@ class MS(AsDataArray):
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
     d2_dems_version: Attr[str] = DEMS_VERSION
-    d2_dmerge_version: Attr[str] = DMERGE_VERSION
+    d2_demerge_version: Attr[str] = DEMERGE_VERSION
