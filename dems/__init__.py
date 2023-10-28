@@ -1,5 +1,5 @@
 __all__ = ["d1", "d2"]
-__version__ = "0.6.0"
+__version__ = "0.7.0"
 
 
 # submodules
