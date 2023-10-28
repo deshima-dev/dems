@@ -234,7 +234,7 @@ class D2MkidID:
 
 @dataclass
 class D2MkidType:
-    data: Data[Ch, str]
+    data: Data[Ch, int]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID type"
 
 
@@ -308,7 +308,7 @@ class MS(AsDataArray):
     aste_misti_frame: Coordof[AsteMistiFrame] = "altaz"
     # DESHIMA 2.0 specific
     d2_mkid_id: Coordof[D2MkidID] = 0
-    d2_mkid_type: Coordof[D2MkidType] = ""
+    d2_mkid_type: Coordof[D2MkidType] = 0
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
