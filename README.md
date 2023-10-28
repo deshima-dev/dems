@@ -6,7 +6,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.8151950-cornflowerblue?style=flat-square)](https://doi.org/10.5281/zenodo.8151950)
 [![Tests](https://img.shields.io/github/actions/workflow/status/deshima-dev/dems/tests.yaml?label=Tests&style=flat-square)](https://github.com/deshima-dev/dems/actions)
 
-DESHIMA measurement set
+DESHIMA measurement set by DataArray
 
 ## Installation
 
