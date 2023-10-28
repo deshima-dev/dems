@@ -200,6 +200,48 @@ class AsteCabinTemperature:
 
 
 @dataclass
+class AsteSubrefX:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subreflector offset of X axis"
+    units: Attr[str] = "mm"
+
+
+@dataclass
+class AsteSubrefY:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subreflector offset of Y axis"
+    units: Attr[str] = "mm"
+
+
+@dataclass
+class AsteSubrefZ:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subreflector offset of Z axis"
+    units: Attr[str] = "mm"
+
+
+@dataclass
+class AsteSubrefXt:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subreflector rotation of X axis"
+    units: Attr[str] = "deg"
+
+
+@dataclass
+class AsteSubrefYt:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subreflector rotation of Y axis"
+    units: Attr[str] = "deg"
+
+
+@dataclass
+class AsteSubrefZt:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "[ASTE] Subreflector rotation of Z axis"
+    units: Attr[str] = "deg"
+
+
+@dataclass
 class AsteMistiLon:
     data: Data[Ti, float]
     long_name: Attr[str] = "[ASTE] MiSTI sky longitude"
@@ -302,6 +344,12 @@ class MS(AsDataArray):
     telescope_coordinates: Attr[Tuple[float, float, float]] = ASTE_ITRS_COORDS
     # ASTE specific
     aste_cabin_temperature: Coordof[AsteCabinTemperature] = 0.0
+    aste_subref_x: Coordof[AsteSubrefX] = 0.0
+    aste_subref_y: Coordof[AsteSubrefY] = 0.0
+    aste_subref_z: Coordof[AsteSubrefZ] = 0.0
+    aste_subref_xt: Coordof[AsteSubrefXt] = 0.0
+    aste_subref_yt: Coordof[AsteSubrefYt] = 0.0
+    aste_subref_zt: Coordof[AsteSubrefZt] = 0.0
     aste_misti_lon: Coordof[AsteMistiLon] = 0.0
     aste_misti_lat: Coordof[AsteMistiLat] = 0.0
     aste_misti_pwv: Coordof[AsteMistiPwv] = 0.0
