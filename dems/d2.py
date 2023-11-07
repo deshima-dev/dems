@@ -1,4 +1,4 @@
-__all__ = ["MS"]
+__all__ = ["MS", "MS_DIMS"]
 
 
 # standard library
@@ -24,6 +24,7 @@ ASTE_ITRS_COORDS = (
 )
 DEMS_VERSION = __version__
 DEMERGE_VERSION = "2.0.0"
+MS_DIMS = "time", "chan"
 
 
 @dataclass
