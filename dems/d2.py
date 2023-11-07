@@ -1,4 +1,9 @@
-__all__ = ["MS", "MS_DIMS"]
+__all__ = [
+    "CUBE_DIMS",
+    "MS_DIMS",
+    "Cube",
+    "MS",
+]
 
 
 # standard library
@@ -14,6 +19,8 @@ from . import __version__
 # type hints
 Ti = Literal["time"]
 Ch = Literal["chan"]
+Lt = Literal["lat"]
+Ln = Literal["lon"]
 
 
 # constants
@@ -22,11 +29,40 @@ ASTE_ITRS_COORDS = (
     -5440188.022176585,
     -2475718.801708271,
 )
+CUBE_DIMS = "chan", "lat", "lon"
 DEMS_VERSION = __version__
 DEMERGE_VERSION = "2.0.0"
 MS_DIMS = "time", "chan"
 
 
+# sub-specs for dimensions
+@dataclass
+class Time_:
+    data: Data[Ti, Literal["datetime64[ns]"]]
+    long_name: Attr[str] = "Start time in UTC"
+
+
+@dataclass
+class Chan_:
+    data: Data[Ch, int]
+    long_name: Attr[str] = "Channel ID"
+
+
+@dataclass
+class Lat_:
+    data: Data[Lt, float]
+    long_name: Attr[str] = "Sky latitude"
+    units: Attr[str] = "deg"
+
+
+@dataclass
+class Lon_:
+    data: Data[Ln, float]
+    long_name: Attr[str] = "Sky longitude"
+    units: Attr[str] = "deg"
+
+
+# sub-specs for coordinates
 @dataclass
 class Mask:
     data: Data[Tuple[Ti, Ch], bool]
@@ -37,18 +73,6 @@ class Mask:
 class Weight:
     data: Data[Tuple[Ti, Ch], float]
     long_name: Attr[str] = "Data weights"
-
-
-@dataclass
-class Time:
-    data: Data[Ti, Literal["datetime64[ns]"]]
-    long_name: Attr[str] = "Start time in UTC"
-
-
-@dataclass
-class Chan:
-    data: Data[Ch, int]
-    long_name: Attr[str] = "Channel ID"
 
 
 @dataclass
@@ -306,8 +330,8 @@ class MS(AsDataArray):
     units: Attr[str] = "K"
     name: Name[str] = "DEMS"
     # dimensions
-    time: Coordof[Time] = "1970-01-01T00:00:00"
-    chan: Coordof[Chan] = 0
+    time: Coordof[Time_] = "1970-01-01T00:00:00"
+    chan: Coordof[Chan_] = 0
     # labels
     beam: Coordof[Beam] = ""
     scan: Coordof[Scan] = ""
@@ -358,5 +382,38 @@ class MS(AsDataArray):
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
+    d2_dems_version: Attr[str] = DEMS_VERSION
+    d2_demerge_version: Attr[str] = DEMERGE_VERSION
+
+
+@dataclass(frozen=True)
+class Cube(AsDataArray):
+    """Spectral cube of DESHIMA 2.0."""
+
+    # data
+    data: Data[Tuple[Ch, Lt, Ln], Any]
+    long_name: Attr[str] = "Brightness"
+    units: Attr[str] = "K"
+    name: Name[str] = "Cube"
+    # dimensions
+    chan: Coordof[Chan_] = 0
+    lon: Coordof[Lon_] = 0.0
+    lat: Coordof[Lat_] = 0.0
+    # data information
+    frame: Coordof[Frame] = "altaz"
+    bandwidth: Coordof[Bandwidth] = 0.0
+    frequency: Coordof[Frequency] = 0.0
+    beam_major: Coordof[BeamMajor] = 0.0
+    beam_minor: Coordof[BeamMinor] = 0.0
+    beam_pa: Coordof[BeamPa] = 0.0
+    # observation information
+    observation: Attr[str] = ""
+    observer: Attr[str] = ""
+    project: Attr[str] = ""
+    object: Attr[str] = ""
+    # DESHIMA 2.0 specific
+    d2_mkid_id: Coordof[D2MkidID] = 0
+    d2_mkid_type: Coordof[D2MkidType] = ""
+    d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_dems_version: Attr[str] = DEMS_VERSION
     d2_demerge_version: Attr[str] = DEMERGE_VERSION
