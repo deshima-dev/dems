@@ -40,14 +40,14 @@ da = MS.new(
 |  | name | Name | DEMS name | - | "DEMS" | str | - | - |
 | Dimensions | time | Dimension | Start time in UTC | - | 1970-01-01T00:00:00.000000000 | numpy.ndarray | (time,) | datetime64[ns] |
 |  | chan | Dimension | Channel ID | - | 0 | numpy.ndarray | (chan,) | int64 |
-| Labels | beam | Coordinate | Beam label | - | "" | numpy.ndarray | (time,) | str |
-|  | scan | Coordinate | Scan label | - | "" | numpy.ndarray | (time,) | str |
-|  | state | Coordinate | State label | - | "" | numpy.ndarray | (time,) | str |
+| Labels | beam | Coordinate | Beam label | - | "" | numpy.ndarray | (time,) | str (<U16) |
+|  | scan | Coordinate | Scan label | - | "" | numpy.ndarray | (time,) | str (<U16) |
+|  | state | Coordinate | State label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 | Telescope pointing | lon | Coordinate | Sky longitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | lat | Coordinate | Sky latitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | lon_origin | Coordinate | Reference sky longitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | lat_origin | Coordinate | Reference sky latitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
-|  | frame | Coordinate | Sky coordinate frame | - | "altaz" | numpy.ndarray | () | str |
+|  | frame | Coordinate | Sky coordinate frame | - | "altaz" | numpy.ndarray | () | str (<U16) |
 | Weather information | temperature | Coordinate | Ground atmospheric temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | pressure | Coordinate | Ground atmospheric pressure | Pa | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | humidity | Coordinate | Ground relative humidity | 1 | 0.0 | numpy.ndarray | (time,) | float64 |
@@ -77,9 +77,9 @@ da = MS.new(
 |  | aste_misti_lon | Coordinate | [ASTE] MiSTI sky longitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_misti_lat | Coordinate | [ASTE] MiSTI sky latitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_misti_pwv | Coordinate | [ASTE] MiSTI measured PWV | mm | 0.0 | numpy.ndarray | (time,) | float64 |
-|  | aste_misti_frame | Coordinate | [ASTE] MiSTI sky coordinate frame | - | "altaz" | numpy.ndarray | () | str |
+|  | aste_misti_frame | Coordinate | [ASTE] MiSTI sky coordinate frame | - | "altaz" | numpy.ndarray | () | str (<U16) |
 | DESHIMA 2.0 specific | d2_mkid_id | Coordinate | [DESHIMA 2.0] MKID ID | - | 0 | numpy.ndarray | (chan,) | int64 |
-|  | d2_mkid_type | Coordinate | [DESHIMA 2.0] MKID type | - | "" | numpy.ndarray | (chan,) | str |
+|  | d2_mkid_type | Coordinate | [DESHIMA 2.0] MKID type | - | "" | numpy.ndarray | (chan,) | str (<U16) |
 |  | d2_mkid_frequency | Coordinate | [DESHIMA 2.0] MKID center frequency | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_roomchopper_isblocking | Coordinate | [DESHIMA 2.0] Whether room chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_skychopper_isblocking | Coordinate | [DESHIMA 2.0] Whether sky chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
