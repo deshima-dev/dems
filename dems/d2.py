@@ -58,19 +58,19 @@ class Chan:
 
 @dataclass
 class Beam:
-    data: Data[Ti, str]
+    data: Data[Ti, Literal["U16"]]
     long_name: Attr[str] = "Beam label"
 
 
 @dataclass
 class Scan:
-    data: Data[Ti, str]
+    data: Data[Ti, Literal["U16"]]
     long_name: Attr[str] = "Scan label"
 
 
 @dataclass
 class State:
-    data: Data[Ti, str]
+    data: Data[Ti, Literal["U16"]]
     long_name: Attr[str] = "State label"
 
 
@@ -104,7 +104,7 @@ class LatOrigin:
 
 @dataclass
 class Frame:
-    data: Data[Tuple[()], str]
+    data: Data[Tuple[()], Literal["U16"]]
     long_name: Attr[str] = "Sky coordinate frame"
 
 
@@ -264,7 +264,7 @@ class AsteMistiPwv:
 
 @dataclass
 class AsteMistiFrame:
-    data: Data[Tuple[()], str]
+    data: Data[Tuple[()], Literal["U16"]]
     long_name: Attr[str] = "[ASTE] MiSTI sky coordinate frame"
 
 
@@ -276,7 +276,7 @@ class D2MkidID:
 
 @dataclass
 class D2MkidType:
-    data: Data[Ch, str]
+    data: Data[Ch, Literal["U16"]]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID type"
 
 
