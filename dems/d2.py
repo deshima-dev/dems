@@ -7,7 +7,7 @@ from typing import Any, Literal, Tuple
 
 
 # dependencies
-from xarray_dataclasses import AsDataArray, Attr, Coordof, Data, Dataof, Name
+from xarray_dataclasses import AsDataArray, Attr, Coordof, Data, Name
 from . import __version__
 
 
@@ -24,12 +24,6 @@ ASTE_ITRS_COORDS = (
 )
 DEMS_VERSION = __version__
 DEMERGE_VERSION = "2.0.0"
-
-
-@dataclass
-class Data_:
-    data: Data[Tuple[Ti, Ch], Any]
-    # long_name: Attr[str] = "Data values"
 
 
 @dataclass
@@ -304,7 +298,7 @@ class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
 
     # data
-    data: Dataof[Data_]
+    data: Data[Tuple[Ti, Ch], Any]
     mask: Coordof[Mask] = False
     weight: Coordof[Weight] = 1.0
     long_name: Attr[str] = "Brightness"
