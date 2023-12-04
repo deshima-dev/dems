@@ -11,8 +11,8 @@ python = ">=3.9, <3.13"
 xarray-dataclasses = "^1.7"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.10"
-ipython = "^8.16"
+black = "^23.11"
+ipython = "^8.18"
 pyright = "^1.1"
 pytest = "^7.4"
 
