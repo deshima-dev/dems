@@ -86,3 +86,4 @@ da = MS.new(
 |  | d2_ddb_version | Attribute | [DESHIMA 2.0] DDB version | - | "" | str | - | - |
 |  | d2_dems_version | Attribute | [DESHIMA 2.0] DEMS version | - | "0.8.0" | str | - | - |
 |  | d2_demerge_version | Attribute | [DESHIMA 2.0] demerge version | - | "2.0.0" | str | - | - |
+|  | d2_merge_datetime | Attribute | [DESHIMA 2.0] Date and time of the data merge | - | - | str | - | - |

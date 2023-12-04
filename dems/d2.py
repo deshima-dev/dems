@@ -7,7 +7,8 @@ __all__ = [
 
 
 # standard library
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from typing import Any, Literal, Tuple
 
 
@@ -318,7 +319,7 @@ class D2SkychopperIsblocking:
     long_name: Attr[str] = "[DESHIMA 2.0] Whether sky chopper is blocking sensor"
 
 
-@dataclass(frozen=True)
+@dataclass
 class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
 
@@ -385,9 +386,13 @@ class MS(AsDataArray):
     d2_ddb_version: Attr[str] = ""
     d2_dems_version: Attr[str] = DEMS_VERSION
     d2_demerge_version: Attr[str] = DEMERGE_VERSION
+    d2_merge_datetime: Attr[str] = field(init=False)
+
+    def __post_init__(self) -> None:
+        self.d2_merge_datetime = datetime.now(timezone.utc).isoformat()
 
 
-@dataclass(frozen=True)
+@dataclass
 class Cube(AsDataArray):
     """Spectral cube of DESHIMA 2.0."""
 
@@ -419,3 +424,4 @@ class Cube(AsDataArray):
     d2_ddb_version: Attr[str] = ""
     d2_dems_version: Attr[str] = DEMS_VERSION
     d2_demerge_version: Attr[str] = DEMERGE_VERSION
+    d2_merge_datetime: Attr[str] = ""
