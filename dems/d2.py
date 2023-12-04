@@ -382,8 +382,8 @@ class MS(AsDataArray):
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
     d2_ddb_version: Attr[str] = ""
-    d2_dems_version: Attr[str] = field(init=False)
     d2_demerge_version: Attr[str] = ""
+    d2_dems_version: Attr[str] = field(init=False)
     d2_merge_datetime: Attr[str] = field(init=False)
 
     def __post_init__(self) -> None:
@@ -422,6 +422,6 @@ class Cube(AsDataArray):
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_ddb_version: Attr[str] = ""
-    d2_dems_version: Attr[str] = ""
     d2_demerge_version: Attr[str] = ""
+    d2_dems_version: Attr[str] = ""
     d2_merge_datetime: Attr[str] = ""

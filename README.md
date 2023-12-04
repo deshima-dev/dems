@@ -84,6 +84,6 @@ da = MS.new(
 |  | d2_roomchopper_isblocking | Coordinate | [DESHIMA 2.0] Whether room chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_skychopper_isblocking | Coordinate | [DESHIMA 2.0] Whether sky chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_ddb_version | Attribute | [DESHIMA 2.0] DDB version | - | "" | str | - | - |
-|  | d2_dems_version | Attribute | [DESHIMA 2.0] DEMS version | - | - | str | - | - |
 |  | d2_demerge_version | Attribute | [DESHIMA 2.0] demerge version | - | "" | str | - | - |
+|  | d2_dems_version | Attribute | [DESHIMA 2.0] DEMS version | - | - | str | - | - |
 |  | d2_merge_datetime | Attribute | [DESHIMA 2.0] Date and time of the data merge | - | - | str | - | - |
