@@ -382,6 +382,7 @@ class MS(AsDataArray):
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
+    d2_ddb_version: Attr[str] = ""
     d2_dems_version: Attr[str] = DEMS_VERSION
     d2_demerge_version: Attr[str] = DEMERGE_VERSION
 
@@ -415,5 +416,6 @@ class Cube(AsDataArray):
     d2_mkid_id: Coordof[D2MkidID] = 0
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
+    d2_ddb_version: Attr[str] = ""
     d2_dems_version: Attr[str] = DEMS_VERSION
     d2_demerge_version: Attr[str] = DEMERGE_VERSION

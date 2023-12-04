@@ -83,5 +83,6 @@ da = MS.new(
 |  | d2_mkid_frequency | Coordinate | [DESHIMA 2.0] MKID center frequency | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_roomchopper_isblocking | Coordinate | [DESHIMA 2.0] Whether room chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_skychopper_isblocking | Coordinate | [DESHIMA 2.0] Whether sky chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
+|  | d2_ddb_version | Attribute | [DESHIMA 2.0] DDB version | - | "" | str | - | - |
 |  | d2_dems_version | Attribute | [DESHIMA 2.0] DEMS version | - | "0.8.0" | str | - | - |
 |  | d2_demerge_version | Attribute | [DESHIMA 2.0] demerge version | - | "2.0.0" | str | - | - |
