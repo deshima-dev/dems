@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 
 title: "dems"
 abstract: "DESHIMA measurement set by DataArray"
-version: 0.8.0
+version: 0.9.0
 date-released: 2023-11-07
 license: "MIT"
 doi: "10.5281/zenodo.8151950"
