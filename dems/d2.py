@@ -7,7 +7,8 @@ __all__ = [
 
 
 # standard library
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from typing import Any, Literal, Tuple
 
 
@@ -30,8 +31,6 @@ ASTE_ITRS_COORDS = (
     -2475718.801708271,
 )
 CUBE_DIMS = "chan", "lat", "lon"
-DEMS_VERSION = __version__
-DEMERGE_VERSION = "2.0.0"
 MS_DIMS = "time", "chan"
 
 
@@ -318,7 +317,7 @@ class D2SkychopperIsblocking:
     long_name: Attr[str] = "[DESHIMA 2.0] Whether sky chopper is blocking sensor"
 
 
-@dataclass(frozen=True)
+@dataclass
 class MS(AsDataArray):
     """Measurement set of DESHIMA 2.0."""
 
@@ -382,11 +381,18 @@ class MS(AsDataArray):
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
-    d2_dems_version: Attr[str] = DEMS_VERSION
-    d2_demerge_version: Attr[str] = DEMERGE_VERSION
+    d2_ddb_version: Attr[str] = ""
+    d2_demerge_version: Attr[str] = ""
+    d2_dems_version: Attr[str] = field(init=False)
+    d2_merge_datetime: Attr[str] = field(init=False)
+
+    def __post_init__(self) -> None:
+        """Set dynamic attributes."""
+        self.d2_dems_version = __version__
+        self.d2_merge_datetime = datetime.now(timezone.utc).isoformat()
 
 
-@dataclass(frozen=True)
+@dataclass
 class Cube(AsDataArray):
     """Spectral cube of DESHIMA 2.0."""
 
@@ -415,5 +421,7 @@ class Cube(AsDataArray):
     d2_mkid_id: Coordof[D2MkidID] = 0
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
-    d2_dems_version: Attr[str] = DEMS_VERSION
-    d2_demerge_version: Attr[str] = DEMERGE_VERSION
+    d2_ddb_version: Attr[str] = ""
+    d2_demerge_version: Attr[str] = ""
+    d2_dems_version: Attr[str] = ""
+    d2_merge_datetime: Attr[str] = ""
