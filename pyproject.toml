@@ -8,13 +8,13 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9, <3.13"
-xarray-dataclasses = "^1.7"
+xarray-dataclasses = "^1.8"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.11"
+black = "^24.4"
 ipython = "^8.18"
 pyright = "^1.1"
-pytest = "^7.4"
+pytest = "^8.2"
 
 [tool.pyright]
 typeCheckingMode = "basic"
