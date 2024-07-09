@@ -287,12 +287,6 @@ class AsteMistiFrame:
 
 
 @dataclass
-class D2MkidID:
-    data: Data[Ch, int]
-    long_name: Attr[str] = "[DESHIMA 2.0] MKID ID"
-
-
-@dataclass
 class D2MkidType:
     data: Data[Ch, Literal["U16"]]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID type"
@@ -376,7 +370,6 @@ class MS(AsDataArray):
     aste_misti_pwv: Coordof[AsteMistiPwv] = 0.0
     aste_misti_frame: Coordof[AsteMistiFrame] = "altaz"
     # DESHIMA 2.0 specific
-    d2_mkid_id: Coordof[D2MkidID] = 0
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
@@ -418,7 +411,6 @@ class Cube(AsDataArray):
     project: Attr[str] = ""
     object: Attr[str] = ""
     # DESHIMA 2.0 specific
-    d2_mkid_id: Coordof[D2MkidID] = 0
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_ddb_version: Attr[str] = ""
