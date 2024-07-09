@@ -68,6 +68,11 @@ da = MS.new(
 |  | telescope_diameter | Attribute | Telescope dish diameter | m | 10.0 | float | - | - |
 |  | telescope_coordinates | Attribute | Telescope ITRS coordinates | m | (0.0, 0.0, 0.0) | "tuple[float, float, float]" | - | - |
 | ASTE specific | aste_cabin_temperature | Coordinate | [ASTE] Cabin temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
+|  | aste_obs_group | Attribute | [ASTE] Observation group | - | "" | str | - | - |
+|  | aste_obs_id | Attribute | [ASTE] Observation ID | - | "" | str | - | - |
+|  | aste_obs_project | Attribute | [ASTE] Observation project | - | "" | str | - | - |
+|  | aste_obs_table | Attribute | [ASTE] Observation table (= observation) | - | "" | str | - | - |
+|  | aste_obs_user | Attribute | [ASTE] Observer (= observer) | - | "" | str | - | - |
 |  | aste_subref_x | Coordinate | [ASTE] Subreflector offset of X axis | mm | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_subref_y | Coordinate | [ASTE] Subreflector offset of Y axis | mm | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_subref_z | Coordinate | [ASTE] Subreflector offset of Z axis | mm | 0.0 | numpy.ndarray | (time,) | float64 |

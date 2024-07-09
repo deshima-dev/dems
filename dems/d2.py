@@ -359,6 +359,11 @@ class MS(AsDataArray):
     telescope_coordinates: Attr[Tuple[float, float, float]] = ASTE_ITRS_COORDS
     # ASTE specific
     aste_cabin_temperature: Coordof[AsteCabinTemperature] = 0.0
+    aste_obs_group: Attr[str] = ""
+    aste_obs_id: Attr[str] = ""
+    aste_obs_project: Attr[str] = ""
+    aste_obs_table: Attr[str] = ""
+    aste_obs_user: Attr[str] = ""
     aste_subref_x: Coordof[AsteSubrefX] = 0.0
     aste_subref_y: Coordof[AsteSubrefY] = 0.0
     aste_subref_z: Coordof[AsteSubrefZ] = 0.0
@@ -410,6 +415,12 @@ class Cube(AsDataArray):
     observer: Attr[str] = ""
     project: Attr[str] = ""
     object: Attr[str] = ""
+    # ASTE specific
+    aste_obs_group: Attr[str] = ""
+    aste_obs_id: Attr[str] = ""
+    aste_obs_project: Attr[str] = ""
+    aste_obs_table: Attr[str] = ""
+    aste_obs_user: Attr[str] = ""
     # DESHIMA 2.0 specific
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
