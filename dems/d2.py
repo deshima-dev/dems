@@ -25,11 +25,6 @@ Ln = Literal["lon"]
 
 
 # constants
-ASTE_ITRS_COORDS = (
-    +2230817.2140945992,
-    -5440188.022176585,
-    -2475718.801708271,
-)
 CUBE_DIMS = "chan", "lat", "lon"
 MS_DIMS = "time", "chan"
 
@@ -151,7 +146,7 @@ class Humidity:
 class WindSpeed:
     data: Data[Ti, float]
     long_name: Attr[str] = "Ground wind speed"
-    units: Attr[str] = "m/s"
+    units: Attr[str] = "m s^-1"
 
 
 @dataclass
@@ -373,16 +368,16 @@ class MS(AsDataArray):
     beam_major: Coordof[BeamMajor] = 0.0
     beam_minor: Coordof[BeamMinor] = 0.0
     beam_pa: Coordof[BeamPa] = 0.0
-    exposure: Coordof[Exposure] = 0.00625
-    interval: Coordof[Interval] = 0.00625
+    exposure: Coordof[Exposure] = 0.0
+    interval: Coordof[Interval] = 0.0
     # observation information
     observation: Attr[str] = ""
     observer: Attr[str] = ""
     project: Attr[str] = ""
     object: Attr[str] = ""
-    telescope_name: Attr[str] = "ASTE"
-    telescope_diameter: Attr[float] = 10.0
-    telescope_coordinates: Attr[Tuple[float, float, float]] = ASTE_ITRS_COORDS
+    telescope_name: Attr[str] = ""
+    telescope_diameter: Attr[float] = 0.0
+    telescope_coordinates: Attr[Tuple[float, float, float]] = 0.0, 0.0, 0.0
     # ASTE specific
     aste_cabin_temperature: Coordof[AsteCabinTemperature] = 0.0
     aste_obs_group: Attr[str] = ""

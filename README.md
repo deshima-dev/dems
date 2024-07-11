@@ -51,21 +51,21 @@ da = MS.new(
 | Weather information | temperature | Coordinate | Ground atmospheric temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | pressure | Coordinate | Ground atmospheric pressure | Pa | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | humidity | Coordinate | Ground relative humidity | 1 | 0.0 | numpy.ndarray | (time,) | float64 |
-|  | wind_speed | Coordinate | Ground wind speed | m/s | 0.0 | numpy.ndarray | (time,) | float64 |
+|  | wind_speed | Coordinate | Ground wind speed | m s^-1 | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | wind_direction | Coordinate | Ground wind direction | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 | Data information | bandwidth | Coordinate | Effective channel bandwidth | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | frequency | Coordinate | Channel center frequency | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | beam_major | Coordinate | Beam major axis | deg | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | beam_minor | Coordinate | Beam minor axis | deg | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | beam_pa | Coordinate | Beam position angle | deg | 0.0 | numpy.ndarray | (chan,) | float64 |
-|  | exposure | Coordinate | Sample exposure time | s | 0.00625 | numpy.ndarray | () | float64 |
-|  | interval | Coordinate | Sample interval time | s | 0.00625 | numpy.ndarray | () | float64 |
+|  | exposure | Coordinate | Sample exposure time | s | 0.0 | numpy.ndarray | () | float64 |
+|  | interval | Coordinate | Sample interval time | s | 0.0 | numpy.ndarray | () | float64 |
 | Observation information | observation | Attribute | Observation name | - | "" | str | - | - |
 |  | observer | Attribute | Observer name | - | "" | str | - | - |
 |  | project | Attribute | Project name | - | "" | str | - | - |
 |  | object | Attribute | Object name | - | "" | str | - | - |
-|  | telescope_name | Attribute | Telescope name | - | "ASTE" | str | - | - |
-|  | telescope_diameter | Attribute | Telescope dish diameter | m | 10.0 | float | - | - |
+|  | telescope_name | Attribute | Telescope name | - | "" | str | - | - |
+|  | telescope_diameter | Attribute | Telescope dish diameter | m | 0.0 | float | - | - |
 |  | telescope_coordinates | Attribute | Telescope ITRS coordinates | m | (0.0, 0.0, 0.0) | "tuple[float, float, float]" | - | - |
 | ASTE specific | aste_cabin_temperature | Coordinate | [ASTE] Cabin temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_obs_group | Attribute | [ASTE] Observation group | - | "" | str | - | - |
