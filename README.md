@@ -11,7 +11,7 @@ DESHIMA measurement set by DataArray
 ## Installation
 
 ```shell
-pip install dems
+pip install dems==2024.7.0
 ```
 
 ## Usage
@@ -51,21 +51,21 @@ da = MS.new(
 | Weather information | temperature | Coordinate | Ground atmospheric temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | pressure | Coordinate | Ground atmospheric pressure | Pa | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | humidity | Coordinate | Ground relative humidity | 1 | 0.0 | numpy.ndarray | (time,) | float64 |
-|  | wind_speed | Coordinate | Ground wind speed | m/s | 0.0 | numpy.ndarray | (time,) | float64 |
+|  | wind_speed | Coordinate | Ground wind speed | m s^-1 | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | wind_direction | Coordinate | Ground wind direction | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 | Data information | bandwidth | Coordinate | Effective channel bandwidth | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | frequency | Coordinate | Channel center frequency | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | beam_major | Coordinate | Beam major axis | deg | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | beam_minor | Coordinate | Beam minor axis | deg | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | beam_pa | Coordinate | Beam position angle | deg | 0.0 | numpy.ndarray | (chan,) | float64 |
-|  | exposure | Coordinate | Sample exposure time | s | 0.00625 | numpy.ndarray | () | float64 |
-|  | interval | Coordinate | Sample interval time | s | 0.00625 | numpy.ndarray | () | float64 |
+|  | exposure | Coordinate | Sample exposure time | s | 0.0 | numpy.ndarray | () | float64 |
+|  | interval | Coordinate | Sample interval time | s | 0.0 | numpy.ndarray | () | float64 |
 | Observation information | observation | Attribute | Observation name | - | "" | str | - | - |
 |  | observer | Attribute | Observer name | - | "" | str | - | - |
 |  | project | Attribute | Project name | - | "" | str | - | - |
 |  | object | Attribute | Object name | - | "" | str | - | - |
-|  | telescope_name | Attribute | Telescope name | - | "ASTE" | str | - | - |
-|  | telescope_diameter | Attribute | Telescope dish diameter | m | 10.0 | float | - | - |
+|  | telescope_name | Attribute | Telescope name | - | "" | str | - | - |
+|  | telescope_diameter | Attribute | Telescope dish diameter | m | 0.0 | float | - | - |
 |  | telescope_coordinates | Attribute | Telescope ITRS coordinates | m | (0.0, 0.0, 0.0) | "tuple[float, float, float]" | - | - |
 | ASTE specific | aste_cabin_temperature | Coordinate | [ASTE] Cabin temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_obs_group | Attribute | [ASTE] Observation group | - | "" | str | - | - |
@@ -83,12 +83,12 @@ da = MS.new(
 |  | aste_misti_lat | Coordinate | [ASTE] MiSTI sky latitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_misti_pwv | Coordinate | [ASTE] MiSTI measured PWV | mm | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_misti_frame | Coordinate | [ASTE] MiSTI sky coordinate frame | - | "altaz" | numpy.ndarray | () | str (<U16) |
-| DESHIMA 2.0 specific | d2_mkid_type | Coordinate | [DESHIMA 2.0] MKID type | - | "" | numpy.ndarray | (chan,) | str (<U16) |
+| DESHIMA 2.0 specific | d2_mkid_id | Coordinate | [DESHIMA 2.0] MKID master ID (= chan) | - | "" | numpy.ndarray | (chan,) | int64 |
+|  | d2_mkid_type | Coordinate | [DESHIMA 2.0] MKID type | - | "" | numpy.ndarray | (chan,) | str (<U16) |
 |  | d2_mkid_frequency | Coordinate | [DESHIMA 2.0] MKID center frequency | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_mkid_q | Coordinate | [DESHIMA 2.0] MKID quality factor | - | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_resp_fwd | Coordinate | [DESHIMA 2.0] Forward efficiency | - | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_resp_p0 | Coordinate | [DESHIMA 2.0] Proportional coefficient of responsivity | K^-0.5 | 0.0 | numpy.ndarray | (chan,) | float64 |
-|  | d2_resp_t0 | Coordinate | [DESHIMA 2.0] Correction temperature of responsivity | K | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_roomchopper_isblocking | Coordinate | [DESHIMA 2.0] Whether room chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_skychopper_isblocking | Coordinate | [DESHIMA 2.0] Whether sky chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_ddb_version | Attribute | [DESHIMA 2.0] DDB version | - | "" | str | - | - |
