@@ -11,7 +11,7 @@ DESHIMA measurement set by DataArray
 ## Installation
 
 ```shell
-pip install dems
+pip install dems==2024.7.0
 ```
 
 ## Usage
