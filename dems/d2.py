@@ -282,6 +282,12 @@ class AsteMistiFrame:
 
 
 @dataclass
+class D2MkidId:
+    data: Data[Ch, int]
+    long_name: Attr[str] = "[DESHIMA 2.0] MKID master ID"
+
+
+@dataclass
 class D2MkidType:
     data: Data[Ch, Literal["U16"]]
     long_name: Attr[str] = "[DESHIMA 2.0] MKID type"
@@ -311,13 +317,6 @@ class D2RespP0:
     data: Data[Ch, float]
     long_name: Attr[str] = "[DESHIMA 2.0] Proportional coefficient of responsivity"
     units: Attr[str] = "K^-0.5"
-
-
-@dataclass
-class D2RespT0:
-    data: Data[Ch, float]
-    long_name: Attr[str] = "[DESHIMA 2.0] Correction temperature of responsivity"
-    units: Attr[str] = "K"
 
 
 @dataclass
@@ -396,12 +395,12 @@ class MS(AsDataArray):
     aste_misti_pwv: Coordof[AsteMistiPwv] = 0.0
     aste_misti_frame: Coordof[AsteMistiFrame] = "altaz"
     # DESHIMA 2.0 specific
+    d2_mkid_id: Coordof[D2MkidId] = 0
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_mkid_q: Coordof[D2MkidQ] = 0.0
     d2_resp_fwd: Coordof[D2RespFwd] = 0.0
     d2_resp_p0: Coordof[D2RespP0] = 0.0
-    d2_resp_t0: Coordof[D2RespT0] = 0.0
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
     d2_ddb_version: Attr[str] = ""
@@ -447,12 +446,12 @@ class Cube(AsDataArray):
     aste_obs_table: Attr[str] = ""
     aste_obs_user: Attr[str] = ""
     # DESHIMA 2.0 specific
+    d2_mkid_id: Coordof[D2MkidId] = 0
     d2_mkid_type: Coordof[D2MkidType] = ""
     d2_mkid_frequency: Coordof[D2MkidFrequency] = 0.0
     d2_mkid_q: Coordof[D2MkidQ] = 0.0
     d2_resp_fwd: Coordof[D2RespFwd] = 0.0
     d2_resp_p0: Coordof[D2RespP0] = 0.0
-    d2_resp_t0: Coordof[D2RespT0] = 0.0
     d2_ddb_version: Attr[str] = ""
     d2_demerge_version: Attr[str] = ""
     d2_dems_version: Attr[str] = ""
