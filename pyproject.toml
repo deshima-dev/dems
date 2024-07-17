@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dems"
-version = "2024.7.0"
+version = "2024.7.1"
 description = "DESHIMA measurement set by DataArray"
 authors = ["Akio Taniguchi <taniguchi@a.phys.nagoya-u.ac.jp>"]
 license = "MIT"
