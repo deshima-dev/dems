@@ -89,6 +89,7 @@ da = MS.new(
 |  | d2_mkid_q | Coordinate | [DESHIMA 2.0] MKID quality factor | - | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_resp_fwd | Coordinate | [DESHIMA 2.0] Forward efficiency | - | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_resp_p0 | Coordinate | [DESHIMA 2.0] Proportional coefficient of responsivity | K^-0.5 | 0.0 | numpy.ndarray | (chan,) | float64 |
+|  | d2_resp_t0 | Coordinate | [DESHIMA 2.0] Correction temperature of responsivity | K | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | d2_roomchopper_isblocking | Coordinate | [DESHIMA 2.0] Whether room chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_skychopper_isblocking | Coordinate | [DESHIMA 2.0] Whether sky chopper is blocking sensor | - | False | numpy.ndarray | (time,) | bool |
 |  | d2_ddb_version | Attribute | [DESHIMA 2.0] DDB version | - | "" | str | - | - |

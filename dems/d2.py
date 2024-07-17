@@ -320,6 +320,13 @@ class D2RespP0:
 
 
 @dataclass
+class D2RespT0:
+    data: Data[Ch, float]
+    long_name: Attr[str] = "[DESHIMA 2.0] Correction temperature of responsivity"
+    units: Attr[str] = "K"
+
+
+@dataclass
 class D2RoomchopperIsblocking:
     data: Data[Ti, bool]
     long_name: Attr[str] = "[DESHIMA 2.0] Whether room chopper is blocking sensor"
@@ -401,6 +408,7 @@ class MS(AsDataArray):
     d2_mkid_q: Coordof[D2MkidQ] = 0.0
     d2_resp_fwd: Coordof[D2RespFwd] = 0.0
     d2_resp_p0: Coordof[D2RespP0] = 0.0
+    d2_resp_t0: Coordof[D2RespT0] = 0.0
     d2_roomchopper_isblocking: Coordof[D2RoomchopperIsblocking] = False
     d2_skychopper_isblocking: Coordof[D2SkychopperIsblocking] = False
     d2_ddb_version: Attr[str] = ""
@@ -452,6 +460,7 @@ class Cube(AsDataArray):
     d2_mkid_q: Coordof[D2MkidQ] = 0.0
     d2_resp_fwd: Coordof[D2RespFwd] = 0.0
     d2_resp_p0: Coordof[D2RespP0] = 0.0
+    d2_resp_t0: Coordof[D2RespT0] = 0.0
     d2_ddb_version: Attr[str] = ""
     d2_demerge_version: Attr[str] = ""
     d2_dems_version: Attr[str] = ""
