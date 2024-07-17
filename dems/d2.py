@@ -389,7 +389,7 @@ class MS(AsDataArray):
     aste_obs_group: Attr[str] = ""
     aste_obs_id: Attr[str] = ""
     aste_obs_project: Attr[str] = ""
-    aste_obs_table: Attr[str] = ""
+    aste_obs_file: Attr[str] = ""
     aste_obs_user: Attr[str] = ""
     aste_subref_x: Coordof[AsteSubrefX] = 0.0
     aste_subref_y: Coordof[AsteSubrefY] = 0.0
@@ -451,7 +451,7 @@ class Cube(AsDataArray):
     aste_obs_group: Attr[str] = ""
     aste_obs_id: Attr[str] = ""
     aste_obs_project: Attr[str] = ""
-    aste_obs_table: Attr[str] = ""
+    aste_obs_file: Attr[str] = ""
     aste_obs_user: Attr[str] = ""
     # DESHIMA 2.0 specific
     d2_mkid_id: Coordof[D2MkidId] = 0

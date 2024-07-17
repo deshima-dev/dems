@@ -71,7 +71,7 @@ da = MS.new(
 |  | aste_obs_group | Attribute | [ASTE] Observation group | - | "" | str | - | - |
 |  | aste_obs_id | Attribute | [ASTE] Observation ID | - | "" | str | - | - |
 |  | aste_obs_project | Attribute | [ASTE] Observation project | - | "" | str | - | - |
-|  | aste_obs_table | Attribute | [ASTE] Observation table (= observation) | - | "" | str | - | - |
+|  | aste_obs_file | Attribute | [ASTE] Observation instruction (= observation) | - | "" | str | - | - |
 |  | aste_obs_user | Attribute | [ASTE] Observer (= observer) | - | "" | str | - | - |
 |  | aste_subref_x | Coordinate | [ASTE] Subreflector offset of X axis | mm | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | aste_subref_y | Coordinate | [ASTE] Subreflector offset of Y axis | mm | 0.0 | numpy.ndarray | (time,) | float64 |
