@@ -42,6 +42,7 @@ da = MS.new(
 |  | chan | Dimension | Channel ID | - | 0 | numpy.ndarray | (chan,) | int64 |
 | Labels | beam | Coordinate | Beam label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 |  | scan | Coordinate | Scan label | - | "" | numpy.ndarray | (time,) | str (<U16) |
+|  | subscan | Coordinate | Sub-scan label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 |  | state | Coordinate | State label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 | Telescope pointing | lon | Coordinate | Sky longitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | lat | Coordinate | Sky latitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
