@@ -82,6 +82,12 @@ class Scan:
 
 
 @dataclass
+class Subscan:
+    data: Data[Ti, Literal["U16"]]
+    long_name: Attr[str] = "Sub-scan label"
+
+
+@dataclass
 class State:
     data: Data[Ti, Literal["U16"]]
     long_name: Attr[str] = "State label"
@@ -355,6 +361,7 @@ class MS(AsDataArray):
     # labels
     beam: Coordof[Beam] = ""
     scan: Coordof[Scan] = ""
+    subscan: Coordof[Subscan] = ""
     state: Coordof[State] = ""
     # telescope pointing
     lon: Coordof[Lon] = 0.0
