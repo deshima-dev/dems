@@ -49,8 +49,8 @@ da = MS.new(
 |  | lat_origin | Coordinate | Reference sky latitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | frame | Coordinate | Sky coordinate frame | - | "altaz" | numpy.ndarray | () | str (<U16) |
 | Weather information | temperature | Coordinate | Ground atmospheric temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
-|  | pressure | Coordinate | Ground atmospheric pressure | Pa | 0.0 | numpy.ndarray | (time,) | float64 |
-|  | humidity | Coordinate | Ground relative humidity | 1 | 0.0 | numpy.ndarray | (time,) | float64 |
+|  | pressure | Coordinate | Ground atmospheric pressure | hPa | 0.0 | numpy.ndarray | (time,) | float64 |
+|  | humidity | Coordinate | Ground relative humidity | % | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | wind_speed | Coordinate | Ground wind speed | m s^-1 | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | wind_direction | Coordinate | Ground wind direction | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 | Data information | bandwidth | Coordinate | Effective channel bandwidth | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |

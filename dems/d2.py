@@ -132,7 +132,7 @@ class Temperature:
 class Pressure:
     data: Data[Ti, float]
     long_name: Attr[str] = "Ground atmospheric pressure"
-    units: Attr[str] = "Pa"
+    units: Attr[str] = "hPa"
 
 
 @dataclass
