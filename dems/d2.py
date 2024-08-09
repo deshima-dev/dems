@@ -422,6 +422,7 @@ class MS(AsDataArray):
     d2_demerge_version: Attr[str] = ""
     d2_dems_version: Attr[str] = field(init=False)
     d2_merge_datetime: Attr[str] = field(init=False)
+    d2_merge_options: Attr[dict[str, Any]] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         """Set dynamic attributes."""
@@ -472,3 +473,4 @@ class Cube(AsDataArray):
     d2_demerge_version: Attr[str] = ""
     d2_dems_version: Attr[str] = ""
     d2_merge_datetime: Attr[str] = ""
+    d2_merge_options: Attr[dict[str, Any]] = field(default_factory=dict)
