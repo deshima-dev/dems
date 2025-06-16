@@ -149,6 +149,13 @@ class Humidity:
 
 
 @dataclass
+class PWV:
+    data: Data[Ti, float]
+    long_name: Attr[str] = "Precipitable water vapor"
+    units: Attr[str] = "mm"
+
+
+@dataclass
 class WindSpeed:
     data: Data[Ti, float]
     long_name: Attr[str] = "Ground wind speed"
@@ -373,6 +380,7 @@ class MS(AsDataArray):
     temperature: Coordof[Temperature] = 0.0
     pressure: Coordof[Pressure] = 0.0
     humidity: Coordof[Humidity] = 0.0
+    pwv: Coordof[PWV] = 0.0
     wind_speed: Coordof[WindSpeed] = 0.0
     wind_direction: Coordof[WindDirection] = 0.0
     # data information

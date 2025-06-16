@@ -52,6 +52,7 @@ da = MS.new(
 | Weather information | temperature | Coordinate | Ground atmospheric temperature | K | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | pressure | Coordinate | Ground atmospheric pressure | hPa | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | humidity | Coordinate | Ground relative humidity | % | 0.0 | numpy.ndarray | (time,) | float64 |
+|  | pwv | Coordinate | Precipitable water vapor | mm | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | wind_speed | Coordinate | Ground wind speed | m s^-1 | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | wind_direction | Coordinate | Ground wind direction | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 | Data information | bandwidth | Coordinate | Effective channel bandwidth | Hz | 0.0 | numpy.ndarray | (chan,) | float64 |
