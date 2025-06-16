@@ -1,15 +1,32 @@
-cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
 
-title: "dems"
-abstract: "DESHIMA measurement set by DataArray"
-version: 2024.7.2
-date-released: 2024-07-17
-license: "MIT"
-doi: "10.5281/zenodo.8151950"
-url: "https://github.com/deshima-dev/dems"
+cff-version: 1.2.0
+title: dems
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
-  - given-names: "Akio"
-    family-names: "Taniguchi"
-    affiliation: "Nagoya University"
-    orcid: "https://orcid.org/0000-0002-9695-6183"
+  - given-names: Akio
+    family-names: Taniguchi
+    email: taniguchi.akio@gmail.com
+    affiliation: Kitami Institute of Technology
+    orcid: 'https://orcid.org/0000-0002-9695-6183'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.8151950
+repository-code: 'https://github.com/deshima-dev/dems'
+url: 'https://github.com/deshima-dev/dems'
+abstract: DESHIMA Measurement Set
+keywords:
+  - python
+  - astronomy
+  - data-format
+  - deshima
+  - measurement-set
+  - spectroscopy
+  - submillimeter
+license: MIT
+version: 2025.6.0
+date-released: '2025-06-16'

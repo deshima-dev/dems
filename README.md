@@ -11,7 +11,7 @@ DESHIMA measurement set by DataArray
 ## Installation
 
 ```shell
-pip install dems==2024.7.2
+pip install dems==2025.6.0
 ```
 
 ## Usage
@@ -40,10 +40,11 @@ da = MS.new(
 |  | name | Name | DEMS name | - | "DEMS" | str | - | - |
 | Dimensions | time | Dimension | Start time in UTC | - | 1970-01-01T00:00:00.000000000 | numpy.ndarray | (time,) | datetime64[ns] |
 |  | chan | Dimension | Channel ID | - | 0 | numpy.ndarray | (chan,) | int64 |
-| Labels | beam | Coordinate | Beam label | - | "" | numpy.ndarray | (time,) | str (<U16) |
+| Labels | observation | Coordinate | Observation label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 |  | scan | Coordinate | Scan label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 |  | subscan | Coordinate | Sub-scan label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 |  | state | Coordinate | State label | - | "" | numpy.ndarray | (time,) | str (<U16) |
+|  | beam | Coordinate | Beam label | - | "" | numpy.ndarray | (time,) | str (<U16) |
 | Telescope pointing | lon | Coordinate | Sky longitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | lat | Coordinate | Sky latitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
 |  | lon_origin | Coordinate | Reference sky longitude | deg | 0.0 | numpy.ndarray | (time,) | float64 |
@@ -62,8 +63,7 @@ da = MS.new(
 |  | beam_pa | Coordinate | Beam position angle | deg | 0.0 | numpy.ndarray | (chan,) | float64 |
 |  | exposure | Coordinate | Sample exposure time | s | 0.0 | numpy.ndarray | () | float64 |
 |  | interval | Coordinate | Sample interval time | s | 0.0 | numpy.ndarray | () | float64 |
-| Observation information | observation | Attribute | Observation name | - | "" | str | - | - |
-|  | observer | Attribute | Observer name | - | "" | str | - | - |
+| Observation information | observer | Attribute | Observer name | - | "" | str | - | - |
 |  | project | Attribute | Project name | - | "" | str | - | - |
 |  | object | Attribute | Object name | - | "" | str | - | - |
 |  | telescope_name | Attribute | Telescope name | - | "" | str | - | - |
