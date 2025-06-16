@@ -70,9 +70,9 @@ class Weight:
 
 
 @dataclass
-class Beam:
+class Observation:
     data: Data[Ti, Literal["U16"]]
-    long_name: Attr[str] = "Beam label"
+    long_name: Attr[str] = "Observation label"
 
 
 @dataclass
@@ -91,6 +91,12 @@ class Subscan:
 class State:
     data: Data[Ti, Literal["U16"]]
     long_name: Attr[str] = "State label"
+
+
+@dataclass
+class Beam:
+    data: Data[Ti, Literal["U16"]]
+    long_name: Attr[str] = "Beam label"
 
 
 @dataclass
@@ -366,10 +372,11 @@ class MS(AsDataArray):
     time: Coordof[Time_] = "1970-01-01T00:00:00"
     chan: Coordof[Chan_] = 0
     # labels
-    beam: Coordof[Beam] = ""
+    observation: Coordof[Observation] = ""
     scan: Coordof[Scan] = ""
     subscan: Coordof[Subscan] = ""
     state: Coordof[State] = ""
+    beam: Coordof[Beam] = ""
     # telescope pointing
     lon: Coordof[Lon] = 0.0
     lat: Coordof[Lat] = 0.0
@@ -392,7 +399,6 @@ class MS(AsDataArray):
     exposure: Coordof[Exposure] = 0.0
     interval: Coordof[Interval] = 0.0
     # observation information
-    observation: Attr[str] = ""
     observer: Attr[str] = ""
     project: Attr[str] = ""
     object: Attr[str] = ""
@@ -459,7 +465,6 @@ class Cube(AsDataArray):
     beam_minor: Coordof[BeamMinor] = 0.0
     beam_pa: Coordof[BeamPa] = 0.0
     # observation information
-    observation: Attr[str] = ""
     observer: Attr[str] = ""
     project: Attr[str] = ""
     object: Attr[str] = ""
