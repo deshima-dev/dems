@@ -108,7 +108,7 @@ wheels = [
 
 [[package]]
 name = "dems"
-version = "2024.7.2"
+version = "2025.6.1"
 source = { editable = "." }
 dependencies = [
     { name = "xarray-dataclasses" },
@@ -129,10 +129,10 @@ requires-dist = [{ name = "xarray-dataclasses", specifier = ">=1.8,<2.0" }]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "black", specifier = ">=24.4" },
-    { name = "ipython", specifier = ">=8.18" },
-    { name = "pyright", specifier = ">=1.1" },
-    { name = "pytest", specifier = ">=8.2" },
+    { name = "black", specifier = ">=25,<26" },
+    { name = "ipython", specifier = ">=8,<10" },
+    { name = "pyright", specifier = ">=1,<2" },
+    { name = "pytest", specifier = ">=8,<9" },
 ]
 
 [[package]]

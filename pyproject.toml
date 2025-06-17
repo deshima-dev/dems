@@ -35,7 +35,12 @@ homepage = "https://github.com/deshima-dev/dems"
 repository = "https://github.com/deshima-dev/dems"
 
 [dependency-groups]
-dev = ["black>=24.4", "ipython>=8.18", "pyright>=1.1", "pytest>=8.2"]
+dev = [
+    "black>=25,<26",
+    "ipython>=8,<10",
+    "pyright>=1,<2",
+    "pytest>=8,<9",
+]
 
 [build-system]
 requires = ["hatchling"]
