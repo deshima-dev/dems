@@ -70,6 +70,18 @@ class Weight:
 
 
 @dataclass
+class CubeMask:
+    data: Data[Tuple[Ch, Lt, Ln], bool]
+    long_name: Attr[str] = "Data masks"
+
+
+@dataclass
+class CubeWeight:
+    data: Data[Tuple[Ch, Lt, Ln], float]
+    long_name: Attr[str] = "Data weights"
+
+
+@dataclass
 class Observation:
     data: Data[Ti, Literal["U16"]]
     long_name: Attr[str] = "Observation label"
@@ -450,6 +462,8 @@ class Cube(AsDataArray):
 
     # data
     data: Data[Tuple[Ch, Lt, Ln], Any]
+    mask: Coordof[CubeMask] = False
+    weight: Coordof[CubeWeight] = 1.0
     long_name: Attr[str] = "Brightness"
     units: Attr[str] = "K"
     name: Name[str] = "Cube"
@@ -457,8 +471,9 @@ class Cube(AsDataArray):
     chan: Coordof[Chan_] = 0
     lon: Coordof[Lon_] = 0.0
     lat: Coordof[Lat_] = 0.0
-    # data information
+    # telescope pointing
     frame: Coordof[Frame] = "altaz"
+    # data information
     bandwidth: Coordof[Bandwidth] = 0.0
     frequency: Coordof[Frequency] = 0.0
     beam_major: Coordof[BeamMajor] = 0.0
@@ -468,6 +483,9 @@ class Cube(AsDataArray):
     observer: Attr[str] = ""
     project: Attr[str] = ""
     object: Attr[str] = ""
+    telescope_name: Attr[str] = ""
+    telescope_diameter: Attr[float] = 0.0
+    telescope_coordinates: Attr[Tuple[float, float, float]] = 0.0, 0.0, 0.0
     # ASTE specific
     aste_obs_group: Attr[str] = ""
     aste_obs_id: Attr[str] = ""
